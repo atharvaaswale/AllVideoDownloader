@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Privacy Policy"
+        android:icon="@drawable/ic_file"/>
+    <item
+        android:title="Help"
+        android:icon="@drawable/ic_help"/>
+    <item
+        android:title="Share App"
+        android:icon="@drawable/ic_share"/>
+    <item
+        android:title="Rate Us"
+        android:icon="@drawable/ic_rateing"/>
+    <item
+        android:id="@+id/exit"
+        android:title="Exit App"
+        android:icon="@drawable/ic_exit"/>
+</menu>

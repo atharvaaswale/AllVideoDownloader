@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Dashboard"
+            android:background="@drawable/dashboard_gradient_bg"
+            android:visibility="visible">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:id="@+id/topLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/downloads"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_download_filled"/>
+                <ImageView
+                    android:id="@+id/menus"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_line_menu"
+                    />
+                <EditText
+                    android:id="@+id/etSearchbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/menus"
+                    android:drawableStart="@drawable/google_icon_drawable"
+                    android:drawablePadding="20dp"
+                    android:padding="15dp"
+                    android:layout_marginTop="40dp"
+                    android:textColor="#FFF"
+                    android:singleLine="true"
+                    android:textSize="15sp"
+                    android:layout_marginHorizontal="10dp"
+                    android:imeOptions="actionDone"
+                    android:hint="Search something here.."
+                    android:textColorHint="#CAEBF8"
+                    android:background="@drawable/google_search_et_bg" />
+            </RelativeLayout>
+            <FrameLayout
+                android:id="@+id/sheet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bottom_sheet_design"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                app:layout_constraintBottom_toBottomOf="@id/topLayout"
+                android:elevation="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Top Sites"
+                        android:textStyle="bold"
+                        android:layout_margin="15dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/apps_cardview_dashboard"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+            </FrameLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottomNavigationView"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="bottom"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            app:menu="@menu/bottom_navigation_menu"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+
+
+</layout>
